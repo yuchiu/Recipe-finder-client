@@ -1,5 +1,5 @@
 #header-title{
-    width:75%;
+    width:65%;
     padding-left:3vw;
 align-items: center;
 
@@ -11,9 +11,11 @@ color: salmon;
 }
 
 #header-btn-container{
-width: 25%;
-margin:auto;
-text-align: right;
+width: 35%;
+display: flex;
+
+justify-content: flex-end;
+align-items: center;
 padding-right:3vw;
 }
 .header-btn{
@@ -22,9 +24,12 @@ padding-right:3vw;
     background: transparent;
     border: 2px lightcoral solid;
     margin:0 1px;
+    &:focus{
+        outline:none;
+    }
 }
 #login-btn{
 }
-#register-btn{
+#signup-btn{
     
 }

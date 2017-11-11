@@ -3,9 +3,9 @@ import Recipe from './Recipe'
 
 class RecipeList extends React.Component {
 
-  
+
   render() {
-    console.log('inside Recipe Component'+ this.props.recipeList.recipeList);
+    console.log('inside Recipe Component' + this.props.recipeList.recipeList);
     let id = 0;
     return (
       <ul id="recipe-list-container">
@@ -15,7 +15,7 @@ class RecipeList extends React.Component {
           .recipeList
           .map((recipe, i) => {
             id++
-            return (<Recipe key={id} recipe={recipe}/>)
+            return (<Recipe key={id} recipe={recipe} />)
           })}
       </ul>
     )

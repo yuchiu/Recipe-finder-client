@@ -10,7 +10,7 @@ Body{
 }
 
 #header-container{
-    height:6vh;
+    height:50px;
     width:100vw;
     display:flex;
     }
@@ -26,6 +26,7 @@ flex-direction: column;
 
 }
 #recipe-list-container{
+    margin-top: 20px;
 display: flex;
 flex-wrap: wrap;
 }

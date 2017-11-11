@@ -26,18 +26,18 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-container">
-      <h1 id="search-banner-title">Find Recipe!</h1>
+        <h1 id="search-banner-title">Find Recipe!</h1>
         <form id="search-form">
-          <input id="search-input" 
+          <input id="search-input"
             onChange={this
-            .handleChange
-            .bind(this)}
+              .handleChange
+              .bind(this)}
             value={this.state.newSearch.ingredients}
-            placeholder="ingredients..."/>
-          <button id="search-btn" 
+            placeholder="ingredients..." />
+          <button id="search-btn"
             onClick={this
-            .handleSearch
-            .bind(this)}
+              .handleSearch
+              .bind(this)}
             type="submit">Find</button>
         </form>
       </div>
