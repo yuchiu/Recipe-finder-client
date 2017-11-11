@@ -41,7 +41,12 @@ class Signup extends React.Component {
       password: this.state.signupInfo.password
   })
   console.log(response.data)
-
+  try{
+    const res = await axios.get('http://localhost:1234')
+    console.log(res.data)
+  }catch(error){
+    console.log(error)
+  }
     this.setState({
       signupInfo: {
         username: '',
