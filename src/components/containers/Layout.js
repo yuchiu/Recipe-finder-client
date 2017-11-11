@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from '../presentations/Search'
-import Recipes from '../presentations/Recipes'
+import RecipeList from '../presentations/RecipeList'
 import actions from '../../actions'
 import {connect} from 'react-redux'
 
@@ -10,7 +10,7 @@ class Layout extends React.Component {
     return (
       <div>
         <Search fetchSearch = {this.props.fetchSearch}/>
-        <Recipes recipeList = {this.props.recipeList}/>
+        <RecipeList recipeList = {this.props.recipeList}/>
       </div>
 
     )

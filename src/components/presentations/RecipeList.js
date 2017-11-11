@@ -1,7 +1,7 @@
 import React from 'react'
 import Recipe from './Recipe'
 
-class Recipes extends React.Component {
+class RecipeList extends React.Component {
 
   
   render() {
@@ -22,4 +22,4 @@ class Recipes extends React.Component {
   }
 }
 
-export default Recipes;
+export default RecipeList;
