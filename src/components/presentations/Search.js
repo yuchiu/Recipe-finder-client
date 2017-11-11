@@ -18,7 +18,7 @@ class Search extends React.Component {
     })
   }
 
-  handleSubmit(e) {
+  handleSearch(e) {
     e.preventDefault()
     this.props.fetchSearch(this.state.newSearch.ingredients)
 
@@ -31,10 +31,11 @@ class Search extends React.Component {
             onChange={this
             .handleChange
             .bind(this)}
-            value={this.state.newSearch.ingredients}/>
+            value={this.state.newSearch.ingredients}
+            placeholder="ingredients..."/>
           <button
-            onSubmit={this
-            .handleSubmit
+            onClick={this
+            .handleSearch
             .bind(this)}
             type="submit">Find</button>
         </form>

@@ -10,10 +10,9 @@ export default {
         return async (dispatch)=>{
             try{
                 const response = await axios.get(`${URL}?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}`)
-                const data = response.hits
                 dispatch({
                     type: constants.FETCH_SEARCH,
-                    payload : data
+                    payload : response.data.hits
                 })
             }catch(error){
                 dispatch({

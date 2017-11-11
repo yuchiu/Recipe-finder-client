@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
     let newState = Object.assign({}, state)
     switch (action.type) {
         case constants.FETCH_SEARCH:
-            console.log('inside fetch search')
+            newState['recipeList'] = action.payload
             return newState
             break;
         case constants.FETCH_ERROR:

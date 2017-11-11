@@ -22,7 +22,7 @@ const stateToProps = (state)=>{
 
 const dispatchToProps = (dispatch)=>{
   return {
-    fetchSearch : ()=>{
+    fetchSearch : (searchTerm)=>{
       dispatch(actions.fetchSearch(searchTerm))
     }
   }
