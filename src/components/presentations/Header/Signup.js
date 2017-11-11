@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from 'react-modal';
 import { FormControl } from 'react-bootstrap';
+import axios from 'axios'
 
 class Signup extends React.Component {
   constructor(props) {
@@ -32,11 +33,14 @@ class Signup extends React.Component {
   }
 
 
-  handleClick(e) {
+  async handleClick(e) {
     e.preventDefault()
-    // this
-    //   .props
-    //   .fetchSearch(this.state.newSearch)
+    const backendURL="http://localhost:1234/"
+    const response = await axios.post(backendURL, this.state.signupInfo)
+
+
+
+
     this.setState({
       signupInfo: {
         username: '',

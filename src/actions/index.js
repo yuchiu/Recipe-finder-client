@@ -3,7 +3,8 @@ import axios from 'axios'
 
 const URL="https://api.edamam.com/search"
 const APP_ID="225d77e1"
-const API_KEY="f99c931d2d656a349da642ed1037973f	"
+const API_KEY="f99c931d2d656a349da642ed1037973f"
+
 
 export default {
     fetchSearch: (searchTerm)=>{
