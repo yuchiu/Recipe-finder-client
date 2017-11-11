@@ -2,7 +2,7 @@ import React from "react";
 import Modal from 'react-modal';
 import { FormControl } from 'react-bootstrap';
 import axios from 'axios'
-
+import authService from './services/authService'
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -35,11 +35,12 @@ class Signup extends React.Component {
 
   async handleClick(e) {
     e.preventDefault()
-    const backendURL="http://localhost:1234/"
-    const response = await axios.post(backendURL, this.state.signupInfo)
 
-
-
+    const response = await authService.register({
+      username :this.state.signupInfo.username,
+      password: this.state.signupInfo.password
+  })
+  console.log(response.data)
 
     this.setState({
       signupInfo: {
