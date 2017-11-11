@@ -1,2 +1,31 @@
 @import 'var';
 @import 'mixins';
+@import './components/header.scss';
+@import './components/search.scss';
+@import './components/recipe.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+Body{
+    font-family: 'Raleway', sans-serif;
+}
+
+#header-container{
+    height:6vh;
+    width:100vw;
+    display:flex;
+    }
+#search-container{
+width:100vw;
+height: 50vh;
+display:flex;
+background: salmon;
+text-align: center;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+#recipe-list-container{
+display: flex;
+flex-wrap: wrap;
+}

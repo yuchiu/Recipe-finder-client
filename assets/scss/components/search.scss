@@ -1,0 +1,33 @@
+
+//search container
+
+#search-from{
+    
+    }
+    #search-banner-title{
+        color:#fff;
+    }
+    #search-input{
+        width:300px;
+        padding: 3px;
+        color: white;
+        background:transparent;
+        opacity: 0.9;
+        border:2px #fff solid;
+        border-radius: 3px;
+        &:focus{
+            outline: none;
+        }
+    }
+    #search-btn{
+        color:#fff;
+        border-radius: 3px;
+        background: transparent;
+        border: 2px #fff solid;
+        margin:0 1px;
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    

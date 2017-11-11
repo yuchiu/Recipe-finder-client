@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../presentations/Header'
 import Search from '../presentations/Search'
 import RecipeList from '../presentations/RecipeList'
 import actions from '../../actions'
@@ -9,6 +10,7 @@ class Layout extends React.Component {
   render() {
     return (
       <div>
+        <Header/>
         <Search fetchSearch = {this.props.fetchSearch}/>
         <RecipeList recipeList = {this.props.recipeList}/>
       </div>
