@@ -2,7 +2,7 @@
     width:65%;
     padding-left:3vw;
 align-items: center;
-
+font-weight: bold;
 text-decoration: none;
 font-size:2em;
 color: salmon;
@@ -24,12 +24,15 @@ padding-right:3vw;
     background: transparent;
     border: 2px lightcoral solid;
     margin:0 1px;
+    cursor: pointer;
     &:focus{
         outline:none;
+    }
+    &:hover{
     }
 }
 #login-btn{
 }
-#signup-btn{
+#register-btn{
     
 }

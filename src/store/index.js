@@ -2,14 +2,15 @@ import {applyMiddleware, createStore, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
-import {fetchSearchReducer} from '../reducers'
+import {fetchSearchReducer, userLoginReducer} from '../reducers'
 
 let store = null
 
 export default {
     createStore: ()=>{
         const reducers = combineReducers({
-            recipeList : fetchSearchReducer
+            recipeList : fetchSearchReducer,
+            currentUser: userLoginReducer
         })
         store = createStore(
             reducers,

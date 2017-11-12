@@ -1,4 +1,7 @@
 export default {
     FETCH_SEARCH: 'FETCH_SEARCH',
-    FETCH_ERROR: 'FETCH_ERROR'
+    REGISTER : "REGISTER",
+    FETCH_ERROR: 'FETCH_ERROR',
+    LOGIN : 'LOGIN',
+    LOGOUT : 'LOGOUT'
 }

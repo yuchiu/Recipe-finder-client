@@ -1,16 +1,12 @@
 import React from "react";
 import Modal from 'react-modal';
 import { FormControl } from 'react-bootstrap';
-import axios from 'axios'
-import authService from './services/authService'
-class Signup extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
-
-    const recipe = props.recipe;
     this.state = {
       modalIsOpen: false,
-      signupInfo: {
+      registerInfo: {
         username: '',
         password: ''
       }
@@ -26,64 +22,53 @@ class Signup extends React.Component {
   }
 
   handleChange(nameOrPass, e) {
-    let signupInfo = this.state.signupInfo
-    signupInfo[nameOrPass] = e.target.value
-    this.setState({ signupInfo: signupInfo })
-    console.log('username: ' + this.state.signupInfo.username + ' password: ' + this.state.signupInfo.password)
+    let registerInfo = this.state.registerInfo
+    registerInfo[nameOrPass] = e.target.value
+    this.setState({ registerInfo: registerInfo })
   }
 
 
-  async handleClick(e) {
+  handleClick(e) {
     e.preventDefault()
-
-    const response = await authService.register({
-      username :this.state.signupInfo.username,
-      password: this.state.signupInfo.password
-  })
-  console.log(response.data)
-  try{
-    const res = await axios.get('http://localhost:1234')
-    console.log(res.data)
-  }catch(error){
-    console.log(error)
-  }
+    this.props.register(this.state.registerInfo)
     this.setState({
-      signupInfo: {
+      registerInfo: {
         username: '',
         password: ''
       }
     })
+    this.closeModal()
   }
 
   render() {
 
     return (
       <div>
-        <button id="signup-btn" className="header-btn" onClick={this.openModal.bind(this)}>Sign Up</button>
+        <button id="register-btn" className="header-btn" onClick={this.openModal.bind(this)}>Register</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal.bind(this)}
           contentLabel='Sign Up'
           style={styles}>
-          <h2>Sign Up</h2>
+          <h2>Register</h2>
 
           <input 
             placeholder="username"
-            value={this.state.signupInfo.username}
+            value={this.state.registerInfo.username}
             onChange={this
               .handleChange
               .bind(this, 'username')} />
 
           <input 
             placeholder="password"
-            value={this.state.signupInfo.password}
+            value={this.state.registerInfo.password}
             onChange={this
               .handleChange
               .bind(this, 'password')} />
 
           <button onClick={this
             .handleClick
-            .bind(this)}>Log In</button>
+            .bind(this)}>Register</button>
 
         </Modal>
       </div>
@@ -103,4 +88,4 @@ const styles = {
   }
 }
 
-export default Signup;
+export default Register;

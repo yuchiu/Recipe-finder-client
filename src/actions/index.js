@@ -5,8 +5,9 @@ const URL="https://api.edamam.com/search"
 const APP_ID="225d77e1"
 const API_KEY="f99c931d2d656a349da642ed1037973f"
 
+const backendAPI="http://localhost:1234"
 
-export default {
+let actions = {
     fetchSearch: (searchTerm)=>{
         return async (dispatch)=>{
             try{
@@ -22,5 +23,57 @@ export default {
                 })
             }
         }
-    }
+    },//fetchsearch
+    register:(info)=>{
+        return async (dispatch)=>{
+            try{
+                const response = await axios.post(`${backendAPI}/register`,info)
+                if(response.data){
+                    console.log('inside register action sucess: '+JSON.stringify(info))
+                    dispatch(actions.login(response.data
+                    ))
+                }
+            }catch(error){
+                console.log('inside register action error: '+JSON.stringify(info))
+                dispatch({
+                    type: constants.FETCH_ERROR,
+                    payload : error
+                })
+            }
+        }
+    },//register
+    login:(info)=>{
+        return (dispatch)=>{
+            try{
+                console.log('inside login action sucess: '+JSON.stringify(info))
+                dispatch({
+                    type: constants.LOGIN,
+                    payload : info
+                })
+            }catch(error){
+                dispatch({
+                    type: constants.FETCH_ERROR,
+                    payload : error
+                })
+            }
+        }
+    },//login
+    logout:()=>{
+        return (dispatch)=>{
+            try{
+                console.log('inside logout action sucess: ')
+                const data={username:'none', message:null}
+                dispatch({
+                    type: constants.LOGOUT,
+                    payload : data
+                })
+            }catch(error){
+                dispatch({
+                    type: constants.FETCH_ERROR,
+                    payload : error
+                })
+            }
+        }
+    },//logout
 }
+export default actions

@@ -1,11 +1,10 @@
 
 //search container
 
+#search-banner-title{
+    color:#fff;
+}
 #search-from{
-    
-    }
-    #search-banner-title{
-        color:#fff;
     }
     #search-input{
         width:300px;
@@ -15,6 +14,7 @@
         opacity: 0.9;
         border:2px #fff solid;
         border-radius: 3px;
+        opacity: 0.8;
         &:focus{
             outline: none;
         }
@@ -25,6 +25,7 @@
         background: transparent;
         border: 2px #fff solid;
         margin:0 1px;
+        cursor: pointer;
         &:focus{
             outline: none;
         }

@@ -1,22 +1,17 @@
 import React from "react";
 import Modal from 'react-modal';
 import { FormControl } from 'react-bootstrap';
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
 
-    const recipe = props.recipe;
     this.state = {
       modalIsOpen: false,
-
+      loginInfo: {
+        username: '',
+        password: ''
+      }
     }
-    this.openModal = this
-      .openModal
-      .bind(this);
-    this.closeModal = this
-      .closeModal
-      .bind(this);
   }
 
   openModal() {
@@ -27,23 +22,54 @@ class Login extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+  handleChange(nameOrPass, e) {
+    let loginInfo = this.state.loginInfo
+    loginInfo[nameOrPass] = e.target.value
+    this.setState({ loginInfo: loginInfo })
+  }
 
+
+  handleClick(e) {
+    e.preventDefault()
+    this.props.login(this.state.loginInfo)
+    this.setState({
+      loginInfo: {
+        username: '',
+        password: ''
+      }
+    })
+    this.closeModal()
+  }
 
   render() {
 
     return (
       <div>
-        <button id="login-btn" className="header-btn" onClick={this.openModal}>Log In</button>
+        <button id="login-btn" className="header-btn" onClick={this.openModal.bind(this)}>Log In</button>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
+          onRequestClose={this.closeModal.bind(this)}
           contentLabel='Sign Up'
           style={styles}>
-          <h2
-            className='modal-header'>Log In</h2>
-            <input />
-            <input />
-            <button>Log In</button>
+          <h2>Log In</h2>
+
+          <input 
+            placeholder="username"
+            value={this.state.loginInfo.username}
+            onChange={this
+              .handleChange
+              .bind(this, 'username')} />
+
+          <input 
+            placeholder="password"
+            value={this.state.loginInfo.password}
+            onChange={this
+              .handleChange
+              .bind(this, 'password')} />
+
+          <button onClick={this
+            .handleClick
+            .bind(this)}>Log In</button>
 
         </Modal>
       </div>
