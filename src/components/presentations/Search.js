@@ -26,7 +26,8 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-container">
-        <h1 id="search-banner-title">Find Recipe!</h1>
+        <h1 id="search-banner-title">Recipe Finder</h1>
+        <p  id="search-banner-p">Find recipe based on your favorite ingredients!</p>
         <form id="search-form">
           <input id="search-input"
             onChange={this

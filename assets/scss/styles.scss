@@ -3,29 +3,35 @@
 @import './components/header.scss';
 @import './components/search.scss';
 @import './components/recipe.scss';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 Body{
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Raleway', sans-serif;
 }
 
 #header-container{
+    background: transparent;
     height:50px;
     width:100vw;
     display:flex;
+    background-color: #24b598;
+    animation: bg-color 20s infinite;
+    -webkit-animation: bg-color 20s infinite;
     }
 #search-container{
 width:100vw;
-height: 50vh;
+height: 400px;
 display:flex;
-background-color: #24b598;
-animation: bg-color 20s infinite;
--webkit-animation: bg-color 20s infinite;
 text-align: center;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-
+background-image: url('https://i.imgur.com/AET5KjN.jpg');
+background-size: cover;
 }
+
+
+
 #recipe-list-container{
     margin-top: 20px;
 display: flex;

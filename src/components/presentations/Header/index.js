@@ -12,8 +12,16 @@ class Index extends React.Component {
     console.log(currentUser)
     return (
       <div id="header-container">
-        <a id="header-title" href="#">Recipe Finder</a>
+      <div id="header-title-container">
+        <a id="header-title" href="index.html">Recipe Finder</a>
+        </div>
         <div id="header-btn-container">
+        {
+          currentUser.username!=='none'
+            ? 
+            <p id="header-message">Hi, {currentUser.username}</p>
+            : null
+        }
         {
           currentUser.username=='none'
             ? 

@@ -1,38 +1,43 @@
-#header-title{
-    width:65%;
-    padding-left:3vw;
-align-items: center;
-font-weight: bold;
-text-decoration: none;
-font-size:2em;
-color: salmon;
-
-
+#header-title-container {
+    width: 65%;
+    padding-left: 3vw;
+    align-items: center;
+    #header-title {
+        
+    font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 2em;
+        color: #fff;
+    }
 }
 
-#header-btn-container{
-width: 35%;
-display: flex;
-
-justify-content: flex-end;
-align-items: center;
-padding-right:3vw;
+#header-message {
+    color: #fff;
+    justify-content: center;
 }
-.header-btn{
-    color:coral;
+
+#header-btn-container {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3vw;
+}
+
+.header-btn {
+    color: #fff;
     border-radius: 3px;
     background: transparent;
-    border: 2px lightcoral solid;
-    margin:0 1px;
+    border: 2px #fff solid;
+    margin: 0 3px;
     cursor: pointer;
-    &:focus{
-        outline:none;
+    &:focus {
+        outline: none;
     }
-    &:hover{
-    }
+    &:hover {}
 }
-#login-btn{
-}
-#register-btn{
-    
-}
+
+#login-btn {}
+
+#register-btn {}
