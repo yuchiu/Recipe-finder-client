@@ -5,50 +5,71 @@
 @import './components/recipe.scss';
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-Body{
+Body {
     font-family: 'Raleway', sans-serif;
 }
 
-#header-container{
+#header-container {
     background: transparent;
-    height:50px;
-    width:100vw;
-    display:flex;
+    height: 50px;
+    width: 100vw;
+    opacity: 0.8;
+    display: flex;
     background-color: #24b598;
     animation: bg-color 20s infinite;
     -webkit-animation: bg-color 20s infinite;
-    }
-#search-container{
-width:100vw;
-height: 400px;
-display:flex;
-text-align: center;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background-image: url('https://i.imgur.com/AET5KjN.jpg');
-background-size: cover;
 }
 
+#search-container {
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://i.imgur.com/AET5KjN.jpg');
+    background-size: cover;
+}
 
-
-#recipe-list-container{
+#recipe-list-container {
     margin-top: 20px;
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @-webkit-keyframes bg-color {
-	0% { background-color: #24b598; }
-	25% { background-color: #ada2ef; }
-	50% { background-color: #3d91e5; }
-	75% { background-color: #915bc1; }
-	100% { background-color: #24b598; }
-  }
-  @keyframes bg-color {
-	0% { background-color: #24b598; }
-	25% { background-color: #ada2ef; }
-	50% { background-color: #3d91e5; }
-	75% { background-color: #915bc1; }
-	100% { background-color: #24b598; }
-  }
+    0% {
+        background-color: #24b598;
+    }
+    25% {
+        background-color: #ada2ef;
+    }
+    50% {
+        background-color: #3d91e5;
+    }
+    75% {
+        background-color: #915bc1;
+    }
+    100% {
+        background-color: #24b598;
+    }
+}
+
+@keyframes bg-color {
+    0% {
+        background-color: #24b598;
+    }
+    25% {
+        background-color: #ada2ef;
+    }
+    50% {
+        background-color: #3d91e5;
+    }
+    75% {
+        background-color: #915bc1;
+    }
+    100% {
+        background-color: #24b598;
+    }
+}

@@ -1,79 +1,78 @@
 import constants from '../constants'
 import axios from 'axios'
 
-const URL="https://api.edamam.com/search"
-const APP_ID="225d77e1"
-const API_KEY="f99c931d2d656a349da642ed1037973f"
+const URL = "https://api.edamam.com/search"
+const APP_ID = "225d77e1"
+const API_KEY = "f99c931d2d656a349da642ed1037973f"
 
-const backendAPI="http://localhost:1234"
+const backendAPI = "http://localhost:1234"
 
 let actions = {
-    fetchSearch: (searchTerm)=>{
-        return async (dispatch)=>{
-            try{
+    fetchSearch: (searchTerm) => {
+        return async(dispatch) => {
+            try {
                 const response = await axios.get(`${URL}?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}`)
                 dispatch({
                     type: constants.FETCH_SEARCH,
-                    payload : response.data.hits
+                    payload: response.data.hits
                 })
-            }catch(error){
+            } catch (error) {
                 dispatch({
                     type: constants.FETCH_ERROR,
-                    payload : error
+                    payload: error
                 })
             }
         }
-    },//fetchsearch
-    register:(info)=>{
-        return async (dispatch)=>{
-            try{
-                const response = await axios.post(`${backendAPI}/register`,info)
-                if(response.data){
-                    console.log('inside register action sucess: '+JSON.stringify(info))
-                    dispatch(actions.login(response.data
-                    ))
+    }, //fetchsearch
+    register: (info) => {
+        return async(dispatch) => {
+            try {
+                const response = await axios.post(`${backendAPI}/register`, info)
+                if (response.data) {
+
+                    dispatch(actions.login(response.data))
                 }
-            }catch(error){
-                console.log('inside register action error: '+JSON.stringify(info))
+            } catch (error) {
                 dispatch({
                     type: constants.FETCH_ERROR,
-                    payload : error
+                    payload: error
                 })
             }
         }
-    },//register
-    login:(info)=>{
-        return (dispatch)=>{
-            try{
-                console.log('inside login action sucess: '+JSON.stringify(info))
+    }, //register
+    login: (info) => {
+        return (dispatch) => {
+            try {
                 dispatch({
                     type: constants.LOGIN,
-                    payload : info
+                    payload: info
                 })
-            }catch(error){
+            } catch (error) {
                 dispatch({
                     type: constants.FETCH_ERROR,
-                    payload : error
+                    payload: error
                 })
             }
         }
-    },//login
-    logout:()=>{
-        return (dispatch)=>{
-            try{
-                console.log('inside logout action sucess: ')
-                const data={username:'none', message:null}
+    }, //login
+    logout: () => {
+        return (dispatch) => {
+            try {
+                data = {
+                    username: 'none',
+                    message: null
+                }
                 dispatch({
                     type: constants.LOGOUT,
-                    payload : data
+                    payload: data
                 })
-            }catch(error){
+            } catch (error) {
                 dispatch({
                     type: constants.FETCH_ERROR,
-                    payload : error
+                    payload: error
                 })
             }
         }
-    },//logout
+    }, //logout
 }
 export default actions

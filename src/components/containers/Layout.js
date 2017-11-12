@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 class Layout extends React.Component {
 
   render() {
-    console.log(this.props.currentUser)
     return (
       <div>
         <Header currentUser={this.props.currentUser} register={this.props.register} login={this.props.login} logout={this.props.logout}/>
@@ -21,8 +20,7 @@ class Layout extends React.Component {
   }
 }
 const stateToProps = (state) => {
-  console.log('inside stateToprops '+JSON.stringify(state))
-  return { recipeList: state.recipeList, currentUser: state.currentUser }
+    return { recipeList: state.recipeList, currentUser: state.currentUser }
 }
 
 const dispatchToProps = (dispatch) => {

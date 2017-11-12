@@ -12,7 +12,6 @@ export default (state = initialState, action) => {
             return newState
             break;
         case constants.FETCH_ERROR:
-        console.log('inside fetch error')
             return newState
             break;
         default:

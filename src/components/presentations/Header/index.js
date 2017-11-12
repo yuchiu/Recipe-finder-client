@@ -9,7 +9,6 @@ class Index extends React.Component {
 
   render() {
     const currentUser =this.props.currentUser
-    console.log(currentUser)
     return (
       <div id="header-container">
       <div id="header-title-container">

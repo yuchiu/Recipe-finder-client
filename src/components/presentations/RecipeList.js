@@ -5,7 +5,6 @@ class RecipeList extends React.Component {
 
 
   render() {
-    console.log('inside Recipe Component' + this.props.recipeList.recipeList);
     let id = 0;
     return (
       <ul id="recipe-list-container">
