@@ -7,7 +7,7 @@ class Ingredients extends React.Component {
   render() {
 
     return (
-      <div className="ingredients-container"> ing</div>
+      <div className="ingredients-container"> {this.props.ingredients.text}</div>
 
     )
   }
